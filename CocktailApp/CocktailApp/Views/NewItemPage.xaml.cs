@@ -11,16 +11,18 @@ namespace CocktailApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Cocktail Item { get; set; }
 
         public NewItemPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            Item = new Cocktail
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                Id = 1,
+                Name = "Cocktail name",
+                Description = "This is an Cocktail description.",
+                Percentage = 4.5f
             };
 
             BindingContext = this;

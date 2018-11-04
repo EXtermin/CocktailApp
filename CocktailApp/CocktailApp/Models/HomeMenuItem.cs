@@ -6,8 +6,11 @@ namespace CocktailApp.Models
 {
     public enum MenuItemType
     {
+        Home,
         Browse,
-        About
+        About,
+        Settings,
+        Login
     }
     public class HomeMenuItem
     {

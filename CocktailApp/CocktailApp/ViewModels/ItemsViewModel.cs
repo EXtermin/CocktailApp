@@ -2,28 +2,27 @@
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
 using CocktailApp.Models;
 using CocktailApp.Views;
+using CocktailApp.Data;
 
 namespace CocktailApp.ViewModels
 {
     public class ItemsViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<Cocktail> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public ItemsViewModel()
         {
-            Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Title = "Home";
+            Items = new ObservableCollection<Cocktail>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewItemPage, Cocktail>(this, "AddItem", async (obj, item) =>
             {
-                var newItem = item as Item;
+                var newItem = item as Cocktail;
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });
@@ -39,7 +38,7 @@ namespace CocktailApp.ViewModels
             try
             {
                 Items.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await CocktailDatabase.GetItemsAsync();
                 foreach (var item in items)
                 {
                     Items.Add(item);

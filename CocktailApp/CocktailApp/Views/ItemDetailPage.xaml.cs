@@ -24,9 +24,9 @@ namespace CocktailApp.Views
         {
             InitializeComponent();
 
-            var item = new Item
+            var item = new Cocktail
             {
-                Text = "Item 1",
+                Name = "Name",
                 Description = "This is an item description."
             };
 

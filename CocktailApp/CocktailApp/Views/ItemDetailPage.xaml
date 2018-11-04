@@ -4,9 +4,11 @@
              x:Class="CocktailApp.Views.ItemDetailPage"
              Title="{Binding Title}">
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" FontSize="Small"/>
+        <Label Text="Name:" FontSize="Medium" />
+        <Label Text="{Binding Item.Name}" FontSize="Small"/>
         <Label Text="Description:" FontSize="Medium" />
         <Label Text="{Binding Item.Description}" FontSize="Small"/>
+        <Label Text="Percentage:" FontSize="Medium"/>
+        <Label Text="{Binding Item.Percentage}" FontSize="Small"/>
     </StackLayout>
 </ContentPage>
