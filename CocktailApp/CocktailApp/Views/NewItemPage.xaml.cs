@@ -22,7 +22,9 @@ namespace CocktailApp.Views
                 Id = 1,
                 Name = "Cocktail name",
                 Description = "This is an Cocktail description.",
-                Percentage = 4.5f
+                Ingredients = "Enter ingredients here",
+                Percentage = 4.5f,
+                //Image = GetImageFromPicker()
             };
 
             BindingContext = this;

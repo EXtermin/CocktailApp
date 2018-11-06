@@ -3,12 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CocktailApp.Views.ItemDetailPage"
              Title="{Binding Title}">
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Name:" FontSize="Medium" />
-        <Label Text="{Binding Item.Name}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" FontSize="Small"/>
-        <Label Text="Percentage:" FontSize="Medium"/>
-        <Label Text="{Binding Item.Percentage}" FontSize="Small"/>
-    </StackLayout>
+    <ScrollView>
+        <StackLayout Spacing="10" Padding="15">
+            <Label Text="Name:" FontSize="Medium" />
+            <Label Text="{Binding Item.Name}" FontSize="Small"/>
+            <Label Text="Description:" FontSize="Medium" />
+            <Label Text="{Binding Item.Description}" FontSize="Small"/>
+            <Label Text="Percentage:" FontSize="Medium"/>
+            <Label Text="{Binding Item.Percentage}" FontSize="Small"/>
+            <Label Text="Ingredients:" FontSize="Medium"/>
+            <Label Text="{Binding Item.Ingredients}" FontSize="Small"/>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>

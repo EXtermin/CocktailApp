@@ -16,6 +16,7 @@ namespace CocktailApp.Data
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Cocktail>().Wait();
             database.CreateTableAsync<User>().Wait();
+// SaveCocktailAsync(item);
         }
 
         #region cocktail
@@ -24,9 +25,9 @@ namespace CocktailApp.Data
             return database.Table<Cocktail>().ToListAsync();
         }
 
-        public Task<List<Cocktail>> GetCocktailNotDoneAsync()
+        public Task<List<Cocktail>> GetCocktailIngredientAsync(string Search)
         {
-            return database.QueryAsync<Cocktail>("SELECT * FROM [Cocktail] WHERE [Done] = 0");
+            return database.QueryAsync<Cocktail>("SELECT * FROM [Cocktail] WHERE [Ingredient] = " + Search);
         }
 
         public Task<Cocktail> GetCocktailAsync(int id)
