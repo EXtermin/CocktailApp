@@ -7,18 +7,19 @@
             <Label Text="Welcome to the register page!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Entry Text="{Binding user.Email}" FontSize="Small" />
+            
             <Label Text="Email" FontSize="Medium" />
+            <Entry TextChanged="Email_TextChanged" FontSize="Small" />
             
-            <Entry Text="{Binding user.Username}" FontSize="Small" />
             <Label Text="Username" FontSize="Medium" />
-            
-            <Entry Text="{Binding user.Password}" FontSize="Small" />
+            <Entry TextChanged="Username_TextChanged" FontSize="Small" />
+
             <Label Text="Password" FontSize="Medium" />
-            
-            <Entry Text="{Binding user.Age}" FontSize="Small" />
+            <Entry TextChanged="Password_TextChanged" FontSize="Small" />
+
             <Label Text="Age" FontSize="Medium" />
-            
+            <Entry TextChanged="Age_TextChanged" FontSize="Small" />
+
             <Button Text="Register" Clicked="Register_Clicked"/>
         </StackLayout>
     </ContentPage.Content>

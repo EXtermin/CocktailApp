@@ -13,32 +13,32 @@ namespace CocktailApp.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
 	{
-        public User user { get; set; }
+        private string username;
+        private string password;
+        public MainPage HomePage { get; set; }
 
         public LoginPage ()
 		{
 			InitializeComponent ();
-            user = new User()
-            {
-                Id = 1,
-                Username = "",
-                Password = "",
-                Email = "bestaatniet@oof.nl"
-
-            };
+            HomePage = new MainPage();
+            
             BindingContext = this;
         }
 
         private async void Login_Clicked(object sender, EventArgs e)
         {
-            if (user.Username == "" || user.Password == "")
+            var user = App.DatabaseCocktail.GetUserAsync(username, password).Result;
+            if (username == "" || password == "")
             {
                 await DisplayAlert("Oops!! Validation Error", "Username and Password are required", "Re-try");
             }
 
-            else if (user.Username == "test123" && user.Password == "123")
+            else if (user != null)
             {
-                await Navigation.PushModalAsync(new MainPage());                   
+                if (username == user.Username && password == user.Password)
+                {
+                    await Navigation.PushModalAsync(HomePage);
+                }
             }
             else
             {
@@ -55,12 +55,12 @@ namespace CocktailApp.Views
 
         private void Username_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.user.Username = e.NewTextValue;
+            this.username = e.NewTextValue;
         }
 
         private void Password_TextChanged(object sender, TextChangedEventArgs e)
         {
-            this.user.Password = e.NewTextValue;
+            this.password = e.NewTextValue;
         }
     }
 }

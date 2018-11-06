@@ -27,7 +27,8 @@ namespace CocktailApp.Views
             var item = new Cocktail
             {
                 Name = "Name",
-                Description = "This is an item description."
+                Description = "This is an item description.",
+                Percentage = 4.5f
             };
 
             viewModel = new ItemDetailViewModel(item);

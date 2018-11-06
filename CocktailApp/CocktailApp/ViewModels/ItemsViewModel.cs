@@ -38,7 +38,7 @@ namespace CocktailApp.ViewModels
             try
             {
                 Items.Clear();
-                var items = await CocktailDatabase.GetItemsAsync();
+                var items = await App.DatabaseCocktail.GetCocktailsAsync();
                 foreach (var item in items)
                 {
                     Items.Add(item);
