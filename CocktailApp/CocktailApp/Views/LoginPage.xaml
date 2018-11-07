@@ -6,15 +6,14 @@
         <StackLayout>
             <Label Text="Welcome!"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" 
+                FontSize="Medium" />
             <Label Text="Username" FontSize="Medium" />
             <Entry TextChanged="Username_TextChanged" FontSize="Small" />
             <Label Text="Password" FontSize="Medium" />
             <Entry TextChanged="Password_TextChanged" FontSize="Small" IsPassword="true"/>
-            <Button Text="Login"
-                Clicked="Login_Clicked" />
-            <Button Text="Register"
-                    Clicked="Register_Clicked"/>
+            <Button Text="Login" Clicked="Login_Clicked" />
+            <Button Text="Register" Clicked="Register_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

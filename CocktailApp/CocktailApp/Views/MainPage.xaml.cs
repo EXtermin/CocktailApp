@@ -27,10 +27,10 @@ namespace CocktailApp.Views
                 switch (id)
                 {
                     case (int)MenuItemType.Home:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                        MenuPages.Add(id, new NavigationPage(new MainPage()));
                         break;
-                    case (int)MenuItemType.ItemsPage:
-                        MenuPages.Add(id, new NavigationPage(new ItemsPage()));
+                    case (int)MenuItemType.SettingsPage:
+                        MenuPages.Add(id, new NavigationPage(new SettingsPage()));
                         break;
                     case (int)MenuItemType.AboutPage:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
@@ -38,9 +38,7 @@ namespace CocktailApp.Views
                     case (int)MenuItemType.EulaPage:
                         MenuPages.Add(id, new NavigationPage(new EulaPage()));
                         break;
-                    case (int)MenuItemType.SettingsPage:
-                        MenuPages.Add(id, new NavigationPage(new SettingsPage()));
-                        break;
+                  
                 }
             }
 
