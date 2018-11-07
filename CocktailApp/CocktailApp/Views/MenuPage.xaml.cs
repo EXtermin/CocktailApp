@@ -21,14 +21,13 @@ namespace CocktailApp.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Home, Title="Home" },
-                new HomeMenuItem {Id = MenuItemType.ItemsPage, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.SettingsPage, Title="Settings"},
                 new HomeMenuItem {Id = MenuItemType.AboutPage, Title="About" },
                 new HomeMenuItem {Id = MenuItemType.EulaPage, Title="EULA" }
             };
 
             ListViewMenu.ItemsSource = menuItems;
-            ListViewMenu.SelectedItem = menuItems[0];
+            //ListViewMenu.SelectedItem = menuItems[0];
             ListViewMenu.ItemSelected += async (sender, e) =>
             {
                 if (e.SelectedItem == null)
