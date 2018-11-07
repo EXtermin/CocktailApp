@@ -53,5 +53,43 @@ namespace CocktailApp.ViewModels
                 IsBusy = false;
             }
         }
+
+        public void ExecuteLoadItemsCommand(string search)
+        {
+            if (IsBusy)
+                return;
+
+            IsBusy = true;
+
+            try
+            {
+                Items.Clear();
+                var items = App.DatabaseCocktail.GetCocktailBySearchAsync(search).Result;
+                foreach (var item in items)
+                {
+                    Items.Add(item);
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine(ex);
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

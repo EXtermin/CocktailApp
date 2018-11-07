@@ -1,7 +1,7 @@
 ﻿using CocktailApp.Models;
 using System;
 using System.Collections.Generic;
-
+using System.Windows.Input;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +12,8 @@ namespace CocktailApp.Views
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         List<HomeMenuItem> menuItems;
+
+
         public MenuPage()
         {
             InitializeComponent();
@@ -25,7 +27,6 @@ namespace CocktailApp.Views
             };
 
             ListViewMenu.ItemsSource = menuItems;
-
             ListViewMenu.SelectedItem = menuItems[0];
             ListViewMenu.ItemSelected += async (sender, e) =>
             {

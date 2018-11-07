@@ -15,6 +15,9 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout>
+        <Grid>
+            <SearchBar TextChanged="Searchbar_TextChanged"></SearchBar>
+        </Grid>
         <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}"
                 VerticalOptions="FillAndExpand"

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using CocktailApp.Data;
 using CocktailApp.Models;
 using CocktailApp.Views;
 using CocktailApp.ViewModels;
@@ -17,6 +18,7 @@ namespace CocktailApp.Views
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
+        private string search;
 
         public ItemsPage()
         {
@@ -48,6 +50,24 @@ namespace CocktailApp.Views
 
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+        }
+
+        private void Search_Completed()
+        {
+            if(search != "")
+            {
+                viewModel.ExecuteLoadItemsCommand(search);
+            }
+            else
+            {
+                viewModel.LoadItemsCommand.Execute(App.DatabaseCocktail.GetCocktailsAsync());
+            }
+        }
+
+        private void Searchbar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            this.search = e.NewTextValue;
+            Search_Completed();
         }
     }
 }
