@@ -13,11 +13,12 @@ namespace CocktailApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPage : ContentPage
+    
     {
         private string username;
         private string password;
         private string email;
-        private int age;
+        private string birthday;
         public RegisterPage()
         {
             InitializeComponent();
@@ -38,33 +39,25 @@ namespace CocktailApp.Views
             this.password = e.NewTextValue;
         }
 
-        private void Age_TextChanged(object sender, TextChangedEventArgs e)
+        private void Birthday_TextChanged(object sender, TextChangedEventArgs e)
         {
-            try
-            {
-                this.age = Int32.Parse(e.NewTextValue);
-            }
-            catch (FormatException)
-            {
-                DisplayAlert("Oops!! Validation Error", "Please put only a number in it", "Re-try");
-            }
-
+            this.birthday = e.NewTextValue;
         }
 
         private async void Register_Clicked(object sender, EventArgs e)
         {
 
-            RegisterUser(this.email, this.username, this.password, this.age);
-            await Navigation.PushModalAsync(new LoginPage());
+            RegisterUser(this.email, this.username, this.password, this.birthday);
+            await Navigation.PushModalAsync(new EulaPage());
         }
 
-        public void RegisterUser(string Email, string Username, string Password, int age)
+        public void RegisterUser(string Email, string Username, string Password, string birthday)
         {
             var user = new User() {
                 Email = Email,
                 Username = Username,
                 Password = Password,
-                Age = age
+                Birthday = birthday
             };
             var databaseUser = App.DatabaseCocktail;
             databaseUser.SaveUserAsync(user);

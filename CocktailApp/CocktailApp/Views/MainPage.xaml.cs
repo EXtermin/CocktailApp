@@ -29,13 +29,16 @@ namespace CocktailApp.Views
                     case (int)MenuItemType.Home:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    case (int)MenuItemType.Browse:
+                    case (int)MenuItemType.ItemsPage:
                         MenuPages.Add(id, new NavigationPage(new ItemsPage()));
                         break;
-                    case (int)MenuItemType.About:
+                    case (int)MenuItemType.AboutPage:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
-                    case (int)MenuItemType.Settings:
+                    case (int)MenuItemType.EulaPage:
+                        MenuPages.Add(id, new NavigationPage(new EulaPage()));
+                        break;
+                    case (int)MenuItemType.SettingsPage:
                         MenuPages.Add(id, new NavigationPage(new SettingsPage()));
                         break;
                 }

@@ -21,9 +21,10 @@ namespace CocktailApp.Views
             menuItems = new List<HomeMenuItem>
             {
                 new HomeMenuItem {Id = MenuItemType.Home, Title="Home" },
-                new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
-                new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Settings, Title="Settings"}
+                new HomeMenuItem {Id = MenuItemType.ItemsPage, Title="Browse" },
+                new HomeMenuItem {Id = MenuItemType.SettingsPage, Title="Settings"},
+                new HomeMenuItem {Id = MenuItemType.AboutPage, Title="About" },
+                new HomeMenuItem {Id = MenuItemType.EulaPage, Title="EULA" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

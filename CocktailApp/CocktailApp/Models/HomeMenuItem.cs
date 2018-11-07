@@ -7,10 +7,11 @@ namespace CocktailApp.Models
     public enum MenuItemType
     {
         Home,
-        Browse,
-        About,
-        Settings,
-        Login
+        ItemsPage,
+        AboutPage,
+        EulaPage,
+        SettingsPage,
+        LoginPage
     }
     public class HomeMenuItem
     {

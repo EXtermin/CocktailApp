@@ -17,8 +17,9 @@
             <Label Text="Password" FontSize="Medium" />
             <Entry TextChanged="Password_TextChanged" FontSize="Small" />
 
-            <Label Text="Age" FontSize="Medium" />
-            <Entry TextChanged="Age_TextChanged" FontSize="Small" />
+            <Label Text="Birthday" FontSize="Medium" />
+            <Entry TextChanged="Birthday_TextChanged" FontSize="Small" />
+           
 
             <Button Text="Register" Clicked="Register_Clicked"/>
         </StackLayout>

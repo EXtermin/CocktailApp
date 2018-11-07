@@ -16,7 +16,8 @@ namespace CocktailApp.Views
 
         public AboutPage()
         {
-                InitializeComponent();
+            InitializeComponent();
+            BindingContext = this;
         }
     }
 }

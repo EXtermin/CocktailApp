@@ -12,6 +12,8 @@ namespace CocktailApp.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public string Ingredients { get; set; }
+        public string PrepMethod { get; set; }
+        public string Warnings { get; set; }
         public float Percentage { get; set; }
         public byte Image { get; set; }
     }

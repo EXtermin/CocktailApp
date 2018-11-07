@@ -4,13 +4,15 @@
              x:Class="CocktailApp.Views.ItemDetailPage"
              Title="{Binding Title}">
     <ScrollView>
-        <StackLayout Spacing="10" Padding="15">
+        <StackLayout Spacing="5" Padding="5">
             <Label Text="Name:" FontSize="Medium" />
             <Label Text="{Binding Item.Name}" FontSize="Small"/>
+            <Label Text="Warnings:" FontSize="Medium" />
+            <Label Text="{Binding Item.Warnings}" FontSize="Small"/>
             <Label Text="Description:" FontSize="Medium" />
             <Label Text="{Binding Item.Description}" FontSize="Small"/>
-            <Label Text="Percentage:" FontSize="Medium"/>
-            <Label Text="{Binding Item.Percentage}" FontSize="Small"/>
+            <Label Text="Preapration:" FontSize="Medium"/>
+            <Label Text="{Binding Item.PrepMethod}" FontSize="Small"/>
             <Label Text="Ingredients:" FontSize="Medium"/>
             <Label Text="{Binding Item.Ingredients}" FontSize="Small"/>
         </StackLayout>
