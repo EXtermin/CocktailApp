@@ -132,10 +132,10 @@ namespace CocktailApp.Data
             database.InsertAsync(cocktail8);
             var cocktail9 = new Cocktail()
             {
-                Name = "testtest",
+                Name = "PORNSTAR 43",
                 Id = 8,
-                Description = "testtest",
-                Ingredients = "testtest",
+                Description = "Geloof ons: Licor 43, het zoetzure van passievrucht samen met vodka…oh, die wil je proberen!",
+                Ingredients = " Licor 43, passievrucht en vodka",
                 Warnings = "Langzaam drinken, geen allergenen bekend.",
                 PrepMethod = "Gewoon in glas gooien en klaar"
             };
