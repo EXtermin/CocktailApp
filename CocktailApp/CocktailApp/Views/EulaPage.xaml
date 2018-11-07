@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CocktailApp.Views.EulaPage"
+             xmlns:vm="clr-namespace:CocktailApp.ViewModels"
+             Title="{Binding Title}">
+
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="End User License Agreement"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Usage of this app comes with no warranties and expects the user to take full responsibility." FontSize="Medium" />
+            <Button Text="Cancel"
+                Clicked="Cancel_Clicked" />
+            <Button Text="Accept"
+                    Clicked="Accept_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
